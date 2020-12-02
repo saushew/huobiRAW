@@ -3,7 +3,7 @@ package marketwebsocketclient
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/huobirdcenter/huobi_golang/logging/applogger"
+// 	"github.com/huobirdcenter/huobi_golang/logging/applogger"
 	"github.com/huobirdcenter/huobi_golang/pkg/client/websocketclientbase"
 	"github.com/huobirdcenter/huobi_golang/pkg/model/market"
 )
@@ -33,7 +33,7 @@ func (p *BestBidOfferWebSocketClient) Subscribe(symbol string, clientId string) 
 
 	p.Send(sub)
 
-	applogger.Info("WebSocket subscribed, topic=%s, clientId=%s", topic, clientId)
+// 	applogger.Info("WebSocket subscribed, topic=%s, clientId=%s", topic, clientId)
 }
 
 // Unsubscribe market by price order book
@@ -43,7 +43,7 @@ func (p *BestBidOfferWebSocketClient) UnSubscribe(symbol string, clientId string
 
 	p.Send(unsub)
 
-	applogger.Info("WebSocket unsubscribed, topic=%s, clientId=%s", topic, clientId)
+// 	applogger.Info("WebSocket unsubscribed, topic=%s, clientId=%s", topic, clientId)
 }
 
 func (p *BestBidOfferWebSocketClient) handleMessage(msg string) (interface{}, error) {
