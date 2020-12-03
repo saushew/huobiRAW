@@ -1,9 +1,9 @@
 package stablecoinclientexample
 
 import (
-	"github.com/huobirdcenter/huobi_golang/config"
-	"github.com/huobirdcenter/huobi_golang/logging/applogger"
-	"github.com/huobirdcenter/huobi_golang/pkg/client"
+	"github.com/saushew/huobiRAW/config"
+	"github.com/saushew/huobiRAW/logging/applogger"
+	"github.com/saushew/huobiRAW/pkg/client"
 )
 func RunAllExamples() {
 	getExchangeRate()

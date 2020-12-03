@@ -2,10 +2,10 @@ package marketwebsocketclientexample
 
 import (
 	"fmt"
-	"github.com/huobirdcenter/huobi_golang/config"
-	"github.com/huobirdcenter/huobi_golang/logging/applogger"
-	"github.com/huobirdcenter/huobi_golang/pkg/client/marketwebsocketclient"
-	"github.com/huobirdcenter/huobi_golang/pkg/model/market"
+	"github.com/saushew/huobiRAW/config"
+	"github.com/saushew/huobiRAW/logging/applogger"
+	"github.com/saushew/huobiRAW/pkg/client/marketwebsocketclient"
+	"github.com/saushew/huobiRAW/pkg/model/market"
 )
 
 func RunAllExamples() {

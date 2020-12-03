@@ -3,9 +3,9 @@ package websocketclientbase
 import (
 	"fmt"
 	"github.com/gorilla/websocket"
-	"github.com/huobirdcenter/huobi_golang/internal/gzip"
-	"github.com/huobirdcenter/huobi_golang/internal/model"
-	"github.com/huobirdcenter/huobi_golang/logging/applogger"
+	"github.com/saushew/huobiRAW/internal/gzip"
+	"github.com/saushew/huobiRAW/internal/model"
+	"github.com/saushew/huobiRAW/logging/applogger"
 	"strings"
 	"sync"
 	"time"

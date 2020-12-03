@@ -3,9 +3,9 @@ package orderwebsocketclient
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/huobirdcenter/huobi_golang/logging/applogger"
-	"github.com/huobirdcenter/huobi_golang/pkg/client/websocketclientbase"
-	"github.com/huobirdcenter/huobi_golang/pkg/model/order"
+	"github.com/saushew/huobiRAW/logging/applogger"
+	"github.com/saushew/huobiRAW/pkg/client/websocketclientbase"
+	"github.com/saushew/huobiRAW/pkg/model/order"
 )
 
 // Responsible to handle order subscription from WebSocket
