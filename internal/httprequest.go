@@ -1,10 +1,11 @@
 package internal
 
 import (
-	"github.com/saushew/huobiRAW/logging/perflogger"
 	"io/ioutil"
 	"net/http"
 	"strings"
+
+	"github.com/saushew/huobiRAW/logging/perflogger"
 )
 
 func HttpGet(url string) (string, error) {

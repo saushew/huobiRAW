@@ -3,11 +3,12 @@ package client
 import (
 	"encoding/json"
 	"errors"
+	"strconv"
+
 	"github.com/saushew/huobiRAW/internal"
 	"github.com/saushew/huobiRAW/internal/requestbuilder"
 	"github.com/saushew/huobiRAW/pkg/model"
 	"github.com/saushew/huobiRAW/pkg/model/etf"
-	"strconv"
 )
 
 // Responsible to operate ETF

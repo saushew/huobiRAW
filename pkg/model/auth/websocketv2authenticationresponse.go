@@ -2,6 +2,7 @@ package auth
 
 import (
 	"encoding/json"
+
 	"github.com/saushew/huobiRAW/pkg/model/base"
 )
 

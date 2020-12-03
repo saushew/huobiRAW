@@ -3,11 +3,12 @@ package client
 import (
 	"encoding/json"
 	"errors"
+	"strconv"
+
 	"github.com/saushew/huobiRAW/internal"
 	"github.com/saushew/huobiRAW/internal/requestbuilder"
 	"github.com/saushew/huobiRAW/pkg/model"
 	"github.com/saushew/huobiRAW/pkg/model/wallet"
-	"strconv"
 )
 
 // Responsible to operate wallet
@@ -66,7 +67,6 @@ func (p *WalletClient) GetWithdrawQuota(currency string) (*wallet.WithdrawQuota,
 	}
 	return nil, errors.New(getResp)
 }
-
 
 //  Parent user to query withdraw address available for API key
 func (p *WalletClient) GetWithdrawAddress(request *model.GetRequest) (*wallet.GetWithdrawAddressResponse, error) {

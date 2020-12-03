@@ -2,6 +2,7 @@ package accountwebsocketclientexample
 
 import (
 	"fmt"
+
 	"github.com/saushew/huobiRAW/config"
 	"github.com/saushew/huobiRAW/logging/applogger"
 	"github.com/saushew/huobiRAW/pkg/client/accountwebsocketclient"

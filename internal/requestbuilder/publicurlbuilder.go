@@ -2,6 +2,7 @@ package requestbuilder
 
 import (
 	"fmt"
+
 	"github.com/saushew/huobiRAW/pkg/model"
 )
 

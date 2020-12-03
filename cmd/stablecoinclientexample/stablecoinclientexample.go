@@ -5,6 +5,7 @@ import (
 	"github.com/saushew/huobiRAW/logging/applogger"
 	"github.com/saushew/huobiRAW/pkg/client"
 )
+
 func RunAllExamples() {
 	getExchangeRate()
 	exchangeStableCoin()

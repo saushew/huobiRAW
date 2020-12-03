@@ -2,6 +2,7 @@ package client
 
 import (
 	"encoding/json"
+
 	"github.com/saushew/huobiRAW/internal"
 	"github.com/saushew/huobiRAW/internal/requestbuilder"
 	"github.com/saushew/huobiRAW/pkg/model"

@@ -2,6 +2,7 @@ package orderwebsocketclient
 
 import (
 	"encoding/json"
+
 	"github.com/saushew/huobiRAW/pkg/client/websocketclientbase"
 	"github.com/saushew/huobiRAW/pkg/model"
 	"github.com/saushew/huobiRAW/pkg/model/order"

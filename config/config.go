@@ -1,5 +1,7 @@
 package config
 
+//
+
 var Host = "api.huobi.pro"
 var AccessKey = "xxxx"
 var AccountId = "1234"

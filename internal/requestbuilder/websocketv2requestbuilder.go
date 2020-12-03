@@ -1,9 +1,10 @@
 package requestbuilder
 
 import (
+	"time"
+
 	"github.com/saushew/huobiRAW/internal/model"
 	model2 "github.com/saushew/huobiRAW/pkg/model"
-	"time"
 )
 
 type WebSocketV2RequestBuilder struct {

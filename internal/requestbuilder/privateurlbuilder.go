@@ -2,9 +2,10 @@ package requestbuilder
 
 import (
 	"fmt"
-	"github.com/saushew/huobiRAW/pkg/model"
 	"net/url"
 	"time"
+
+	"github.com/saushew/huobiRAW/pkg/model"
 )
 
 type PrivateUrlBuilder struct {

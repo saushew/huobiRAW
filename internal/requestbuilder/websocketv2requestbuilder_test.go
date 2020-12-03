@@ -2,9 +2,10 @@ package requestbuilder
 
 import (
 	"encoding/json"
-	"github.com/saushew/huobiRAW/internal/model"
 	"testing"
 	"time"
+
+	"github.com/saushew/huobiRAW/internal/model"
 )
 
 func TestWebSocketV2RequestBuilder_build_Time_Success(t *testing.T) {

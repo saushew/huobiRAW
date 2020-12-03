@@ -2,6 +2,7 @@ package traderexample
 
 import (
 	"fmt"
+
 	"github.com/saushew/huobiRAW/config"
 	"github.com/saushew/huobiRAW/logging/applogger"
 	"github.com/saushew/huobiRAW/pkg/client/marketwebsocketclient"
@@ -11,7 +12,6 @@ import (
 func RunAllExamples() {
 	subMultipleBBO()
 }
-
 
 func subMultipleBBO() {
 	client := new(marketwebsocketclient.BestBidOfferWebSocketClient).Init(config.Host)

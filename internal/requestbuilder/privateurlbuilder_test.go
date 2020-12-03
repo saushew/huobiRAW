@@ -1,9 +1,10 @@
 package requestbuilder
 
 import (
-	"github.com/saushew/huobiRAW/pkg/model"
 	"testing"
 	"time"
+
+	"github.com/saushew/huobiRAW/pkg/model"
 )
 
 func TestPrivateUrlBuilder_Build_NoRequestParameter_Success(t *testing.T) {

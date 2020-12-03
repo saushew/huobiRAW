@@ -3,14 +3,15 @@ package websocketclientbase
 import (
 	"errors"
 	"fmt"
+	"sync"
+	"time"
+
 	"github.com/gorilla/websocket"
 	"github.com/saushew/huobiRAW/internal/gzip"
 	"github.com/saushew/huobiRAW/internal/model"
 	"github.com/saushew/huobiRAW/internal/requestbuilder"
 	"github.com/saushew/huobiRAW/logging/applogger"
 	"github.com/saushew/huobiRAW/pkg/model/auth"
-	"sync"
-	"time"
 )
 
 const (

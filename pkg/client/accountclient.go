@@ -3,11 +3,12 @@ package client
 import (
 	"encoding/json"
 	"errors"
+	"strconv"
+
 	"github.com/saushew/huobiRAW/internal"
 	"github.com/saushew/huobiRAW/internal/requestbuilder"
 	"github.com/saushew/huobiRAW/pkg/model"
 	"github.com/saushew/huobiRAW/pkg/model/account"
-	"strconv"
 )
 
 // Responsible to operate account
@@ -220,7 +221,6 @@ func (p *AccountClient) FuturesTransfer(request account.FuturesTransferRequest) 
 	}
 	return result.Data, nil
 }
-
 
 // Returns the point balance of specified user's account
 func (p *AccountClient) GetPointBalance(subUid string) (*account.GetPointBalanceResponse, error) {

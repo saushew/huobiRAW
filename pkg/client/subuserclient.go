@@ -4,14 +4,15 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"strconv"
+	"strings"
+
 	"github.com/saushew/huobiRAW/internal"
 	"github.com/saushew/huobiRAW/internal/requestbuilder"
 	"github.com/saushew/huobiRAW/pkg/model"
 	"github.com/saushew/huobiRAW/pkg/model/account"
 	"github.com/saushew/huobiRAW/pkg/model/subuser"
 	"github.com/saushew/huobiRAW/pkg/model/wallet"
-	"strconv"
-	"strings"
 )
 
 // Responsible to operate wallet
@@ -69,7 +70,6 @@ func (p *SubUserClient) SubUserManagement(request subuser.SubUserManagementReque
 	}
 	return result.Data, nil
 }
-
 
 // Set Tradable Market for Sub Users
 func (p *SubUserClient) SetSubUserTradableMarket(request subuser.SetSubUserTradableMarketRequest) ([]subuser.TradableMarket, error) {

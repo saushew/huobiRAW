@@ -3,11 +3,12 @@ package client
 import (
 	"encoding/json"
 	"errors"
+	"strconv"
+
 	"github.com/saushew/huobiRAW/internal"
 	"github.com/saushew/huobiRAW/internal/requestbuilder"
 	"github.com/saushew/huobiRAW/pkg/model"
 	"github.com/saushew/huobiRAW/pkg/model/margin"
-	"strconv"
 )
 
 // Responsible to operate cross margin
@@ -256,10 +257,10 @@ func (p *CrossMarginClient) GeneralMarginLoanOrders(optionalRequest margin.Cross
 		request.AddParam("currency", optionalRequest.Currency)
 	}
 	if optionalRequest.StartDate != 0 {
-		request.AddParam("startDate", strconv.FormatInt(optionalRequest.StartDate,10))
+		request.AddParam("startDate", strconv.FormatInt(optionalRequest.StartDate, 10))
 	}
 	if optionalRequest.EndDate != 0 {
-		request.AddParam("endDate", strconv.FormatInt(optionalRequest.EndDate,10))
+		request.AddParam("endDate", strconv.FormatInt(optionalRequest.EndDate, 10))
 	}
 	if optionalRequest.Sort != "" {
 		request.AddParam("sort", optionalRequest.Sort)
@@ -268,7 +269,7 @@ func (p *CrossMarginClient) GeneralMarginLoanOrders(optionalRequest margin.Cross
 		request.AddParam("limit", strconv.Itoa(optionalRequest.Limit))
 	}
 	if optionalRequest.FromId != 0 {
-		request.AddParam("fromId", strconv.FormatInt(optionalRequest.FromId,10))
+		request.AddParam("fromId", strconv.FormatInt(optionalRequest.FromId, 10))
 	}
 
 	url := p.privateUrlBuilder.Build("GET", "/v2/account/repayment", request)
@@ -288,4 +289,3 @@ func (p *CrossMarginClient) GeneralMarginLoanOrders(optionalRequest margin.Cross
 
 	return nil, errors.New(getResp)
 }
-
