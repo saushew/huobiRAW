@@ -100,13 +100,13 @@ func (p *WebSocketV2ClientBase) Close() {
 func (p *WebSocketV2ClientBase) connectWebSocket() {
 	var err error
 	url := fmt.Sprintf("wss://%s%s", p.host, websocketV2Path)
-	applogger.Debug("WebSocket connecting...")
+// 	applogger.Debug("WebSocket connecting...")
 	p.conn, _, err = websocket.DefaultDialer.Dial(url, nil)
 	if err != nil {
 		applogger.Error("WebSocket connected error: %s", err)
 		return
 	}
-	applogger.Info("WebSocket connected")
+// 	applogger.Info("WebSocket connected")
 
 	auth, err := p.requestBuilder.Build()
 	if err != nil {
@@ -126,14 +126,14 @@ func (p *WebSocketV2ClientBase) disconnectWebSocket() {
 	// start a new goroutine to send a signal
 	go p.stopReadLoop()
 
-	applogger.Debug("WebSocket disconnecting...")
+// 	applogger.Debug("WebSocket disconnecting...")
 	err := p.conn.Close()
 	if err != nil {
 		applogger.Error("WebSocket disconnect error: %s", err)
 		return
 	}
 
-	applogger.Info("WebSocket disconnected")
+// 	applogger.Info("WebSocket disconnected")
 }
 
 // initialize a ticker and start a goroutine tickerLoop()
@@ -153,21 +153,21 @@ func (p *WebSocketV2ClientBase) stopTicker() {
 // It checks the last data that received from server, if it is longer than the threshold,
 // it will force disconnect server and connect again.
 func (p *WebSocketV2ClientBase) tickerLoop() {
-	applogger.Debug("tickerLoop started")
+// 	applogger.Debug("tickerLoop started")
 	for {
 		select {
 		// start a goroutine readLoop()
 		case <-p.stopTickerChannel:
-			applogger.Debug("tickerLoop stopped")
+// 			applogger.Debug("tickerLoop stopped")
 			return
 
 		// Receive tick from tickChannel
 		case <-p.ticker.C:
 			elapsedSecond := time.Now().Sub(p.lastReceivedTime).Seconds()
-			applogger.Debug("WebSocket received data %f sec ago", elapsedSecond)
+// 			applogger.Debug("WebSocket received data %f sec ago", elapsedSecond)
 
 			if elapsedSecond > ReconnectWaitSecond {
-				applogger.Info("WebSocket reconnect...")
+// 				applogger.Info("WebSocket reconnect...")
 				p.disconnectWebSocket()
 				p.connectWebSocket()
 			}
@@ -188,12 +188,12 @@ func (p *WebSocketV2ClientBase) stopReadLoop() {
 // defines a for loop to read data from server
 // it will stop once it receives the signal from stopReadChannel
 func (p *WebSocketV2ClientBase) readLoop() {
-	applogger.Debug("readLoop started")
+// 	applogger.Debug("readLoop started")
 	for {
 		select {
 		// Receive data from stopChannel
 		case <-p.stopReadChannel:
-			applogger.Debug("readLoop stopped")
+// 			applogger.Debug("readLoop stopped")
 			return
 
 		default:
@@ -228,10 +228,10 @@ func (p *WebSocketV2ClientBase) readLoop() {
 			// If it is Ping then respond Pong
 			pingV2Msg := model.ParsePingV2Message(message)
 			if pingV2Msg.IsPing() {
-				applogger.Debug("Received Ping: %d", pingV2Msg.Data.Timestamp)
+// 				applogger.Debug("Received Ping: %d", pingV2Msg.Data.Timestamp)
 				pongMsg := fmt.Sprintf("{\"action\": \"pong\", \"data\": { \"ts\": %d } }", pingV2Msg.Data.Timestamp)
 				p.Send(pongMsg)
-				applogger.Debug("Respond  Pong: %d", pingV2Msg.Data.Timestamp)
+// 				applogger.Debug("Respond  Pong: %d", pingV2Msg.Data.Timestamp)
 			} else {
 				// Try to pass as websocket v2 authentication response
 				// If it is then invoke authentication handler
