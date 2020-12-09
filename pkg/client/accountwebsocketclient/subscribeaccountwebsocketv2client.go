@@ -37,7 +37,7 @@ func (p *SubscribeAccountWebSocketV2Client) Subscribe(mode string, clientId stri
 
 	p.Send(sub)
 
-	applogger.Info("WebSocket subscribed, channel=%s, clientId=%s", channel, clientId)
+// 	applogger.Info("WebSocket subscribed, channel=%s, clientId=%s", channel, clientId)
 }
 
 // Unsubscribe balance updates
@@ -47,7 +47,7 @@ func (p *SubscribeAccountWebSocketV2Client) UnSubscribe(mode string, clientId st
 
 	p.Send(unsub)
 
-	applogger.Info("WebSocket unsubscribed, channel=%s, clientId=%s", channel, clientId)
+// 	applogger.Info("WebSocket unsubscribed, channel=%s, clientId=%s", channel, clientId)
 }
 
 func (p *SubscribeAccountWebSocketV2Client) handleMessage(msg string) (interface{}, error) {
