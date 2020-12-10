@@ -44,7 +44,7 @@ func (p *BestBidOfferWebSocketClient) UnSubscribe(symbol string, clientId string
 
 	p.Send(unsub)
 
-	// 	applogger.Info("WebSocket unsubscribed, topic=%s, clientId=%s", topic, clientId)
+		applogger.Info("WebSocket unsubscribed, topic=%s, clientId=%s", topic, clientId)
 }
 
 func (p *BestBidOfferWebSocketClient) handleMessage(msg string) (interface{}, error) {
